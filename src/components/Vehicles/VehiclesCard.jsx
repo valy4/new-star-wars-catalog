@@ -5,14 +5,17 @@ function VehiclesCard(props) {
 
 
   return (
+
     <ContainerCard>
       <li><b>Model</b> : {props.model}</li>
+      <li><b>Name</b> : {props.name}</li>
       <li><b>Manufacturer</b> : {props.manufacturer}</li>
       <li><b>Vehicle Class</b> : {props.vehicle_class}</li>
       <li> <b>Passangers Number</b> : {props.passengers}</li>
       <li><b>Crew Number</b> : {props.crew}</li>
 
     </ContainerCard>
+
   )
 }
 export default VehiclesCard

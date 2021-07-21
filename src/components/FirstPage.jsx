@@ -2,7 +2,7 @@ import React from "react"
 import { useState, useEffect } from "react"
 import VehicleCard from "./Vehicles/VehiclesCard"
 import styled from "styled-components"
-
+import { Link } from "react-router-dom"
 
 
 function FirstPage() {
@@ -16,31 +16,33 @@ function FirstPage() {
         console.log(data)
         setVehiclesDetails(data.results)
 
-        // setDetails((details) => [...details, ...data.results]);
+
       })
   }, [])
   return (
-    <CotainerPage>
-      {vehiclesDetails.map((vehicle) => (<VehicleCard
-        model={vehicle.model}
-        manufacturer={vehicle.manufacturer}
-        vehicle_class={vehicle.vehicle_class}
-        passengers={vehicle.passengers}
-        crew={vehicle.crew}
+    <Link to={`/vehicle/${vehiclesDetails.url && vehiclesDetails.url.split("/")[5]}`}>
+      <ContainerPage>
+        {vehiclesDetails.map((vehicle) => (<VehicleCard
+          model={vehicle.model}
+          manufacturer={vehicle.manufacturer}
+          vehicle_class={vehicle.vehicle_class}
+          passengers={vehicle.passengers}
+          crew={vehicle.crew}
+          name={vehicle.name}
+          id={vehicle.url.split("/")[5]}
+        >
+        </VehicleCard>)
 
+        )}
 
-      >
-      </VehicleCard>)
-
-      )}
-
-    </CotainerPage>
+      </ContainerPage>
+    </Link >
   )
 }
 
 export default FirstPage
-const CotainerPage = styled.div`
-display: flex;
-flex-direction: row;
-flex-wrap: wrap;
-`
+const ContainerPage = styled.div`
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      `
