@@ -11,8 +11,8 @@ function App() {
           <Route path="/vehicle/:id">
             <VehiclePage />
           </Route>
-          <Route>
-            <FirstPage exact path="/" />
+          <Route exact path="/">
+            <FirstPage />
           </Route>
         </Switch>
       </Router>

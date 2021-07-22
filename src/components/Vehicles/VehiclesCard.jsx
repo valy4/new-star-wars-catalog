@@ -4,9 +4,7 @@ import styled from "styled-components";
 function VehiclesCard(props) {
   return (
     <ContainerCard>
-      <li>
-        <b>Model</b> : {props.id}
-      </li>
+
       <li>
         <b>Model</b> : {props.model}
       </li>
@@ -20,7 +18,6 @@ function VehiclesCard(props) {
         <b>Vehicle Class</b> : {props.vehicle_class}
       </li>
       <li>
-        {" "}
         <b>Passengers Number</b> : {props.passengers}
       </li>
       <li>
